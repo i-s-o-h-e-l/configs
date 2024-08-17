@@ -119,8 +119,8 @@ if [ -f '/c/ProgramData/anaconda3/Scripts/conda.exe' ]; then
     CONDA_BIN_PATH="/c/ProgramData/anaconda3/Scripts/conda.exe"
 elif [ -f '/c/Anaconda3/Scripts/conda.exe' ]; then
     CONDA_BIN_PATH="/c/ProgramData/Anaconda3/Scripts/conda.exe"
-elif [ -f "${USERPROFILE}\Anaconda3\Scripts\conda.exe" ]; then
-    CONDA_BIN_PATH="/c/ProgramData/Anaconda3/Scripts/conda.exe"
+elif [ -f "${USERPROFILE}/Anaconda3/Scripts/conda.exe" ]; then
+    CONDA_BIN_PATH="${USERPROFILE}/Anaconda3/Scripts/conda.exe"
 fi
 
 if [ -v CONDA_BIN_PATH ]; then       # if CONDA_BIN_PATH exists
