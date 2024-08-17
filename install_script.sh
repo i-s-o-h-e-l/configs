@@ -5,7 +5,7 @@ if [ ! command -v apt &> /dev/null ]; then USING_UBUNTU=true; else USING_UBUNTU=
 # Install packages
 if [ $USING_MSYS2 ]; then
     echo "Installing MSYS2 packages"
-    pacman -S --needed --noconfirm mingw-w64-x86_64-toolchain git make mingw-w64-x86_64-cmake mingw-w64-x86_64-python mingw-w64-x86_64-python-pip zsh mingw-w64-x86_64-ripgrep mingw-w64-x86_64-fzf mingw-w64-x86_64-bat mingw-w64-x86_64-fd mingw-w64-x86_64-neovim mingw-w64-x86_64-nodejs
+    pacman -S --needed --noconfirm mingw-w64-x86_64-toolchain git make mingw-w64-x86_64-cmake mingw-w64-x86_64-clang mingw-w64-x86_64-clang-tools-extra mingw-w64-x86_64-python mingw-w64-x86_64-python-pip zsh mingw-w64-x86_64-ripgrep mingw-w64-x86_64-fzf mingw-w64-x86_64-bat mingw-w64-x86_64-fd mingw-w64-x86_64-neovim mingw-w64-x86_64-nodejs
 
 elif [ $USING_UBUNTU ] ; then   
     echo "Installing Ubuntu packages"
