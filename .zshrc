@@ -113,3 +113,8 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Add VS Code to PATH 
+# this should be after conda init because cyrillic symbols may be corrupted?
+#export PATH="/c/Users/Кирилл/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
+export PATH="$(cygpath -u ${LOCALAPPDATA})/Programs/Microsoft VS Code/bin:$PATH"
