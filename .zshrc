@@ -132,4 +132,5 @@ fi
 # Add VS Code to PATH 
 # this should be after conda init because cyrillic symbols may be corrupted?
 #export PATH="/c/Users/Кирилл/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"
-export PATH="$(cygpath -u ${LOCALAPPDATA})/Programs/Microsoft VS Code/bin:$PATH"
+#export PATH="$(cygpath -u ${LOCALAPPDATA})/Programs/Microsoft VS Code/bin:$PATH" # this doesn't work because conda init breaks cygpath
+export PATH="${LOCALAPPDATA}/Programs/Microsoft VS Code/bin:$PATH"  # PATH looks weird but this works
