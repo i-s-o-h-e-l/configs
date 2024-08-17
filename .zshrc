@@ -114,6 +114,21 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Initialize conda
+if [ -f '/c/ProgramData/anaconda3/Scripts/conda.exe' ]; then
+    CONDA_BIN_PATH="/c/ProgramData/anaconda3/Scripts/conda.exe"
+elif [ -f '/c/Anaconda3/Scripts/conda.exe' ]; then
+    CONDA_BIN_PATH="/c/ProgramData/Anaconda3/Scripts/conda.exe"
+elif [ -f "${USERPROFILE}\Anaconda3\Scripts\conda.exe" ]; then
+    CONDA_BIN_PATH="/c/ProgramData/Anaconda3/Scripts/conda.exe"
+fi
+
+if [ -v CONDA_BIN_PATH ]; then       # if CONDA_BIN_PATH exists
+    # eval "$('/c/ProgramData/anaconda3/Scripts/conda.exe' 'shell.zsh' 'hook')"  # doesn't work
+    # fix the parsing error, see https://github.com/conda/conda/issues/9922#issuecomment-1518043657
+    eval "$("$CONDA_BIN_PATH" 'shell.zsh' 'hook' | sed -e 's/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@"/"$CONDA_EXE" $_CE_M $_CE_CONDA "$@" | tr -d \x27\\r\x27/g')"
+fi
+
 # Add VS Code to PATH 
 # this should be after conda init because cyrillic symbols may be corrupted?
 #export PATH="/c/Users/Кирилл/AppData/Local/Programs/Microsoft VS Code/bin:$PATH"

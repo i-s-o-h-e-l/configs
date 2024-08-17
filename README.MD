@@ -64,17 +64,15 @@ see https://www.msys2.org/docs/symlinks/
 `mkdir %APPDATA%\alacritty && mklink %APPDATA%\alacritty\alacritty.toml .\alacritty.toml`
 
 
-# To do
+# To do and bugs
 - add windows terminal config
-- add conda init to .zshrc
-  - add more places where conda can be
 - add tmux config and installation to script
 - add creating symlinks automatically to script
-- fix nvim bug with cyrillic symbols
-
-# Bugs
+- add nvim gui config
 - tmux doesn't work with msys2 https://github.com/microsoft/terminal/issues/5132
 - conda completion sees only base evironment in MSYS (and ubuntu?), but works on WSL
-- neovim doesn't work if config is in pqth with cyrillic symbols 
+- neovim doesn't work in MSYS if config is in path with cyrillic symbols 
 - cygpath works weird after conda init
+- cursor flickers in nvim qt (see https://neovim.io/doc/user/faq.html)
+- cursor changes in terminal after nvim
 
