@@ -15,7 +15,8 @@ fi
 
 if [ ! -d $HOME/.oh-my-zsh ]; then
     echo "Installing oh-my-zsh"
-    bash "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    # see https://github.com/ohmyzsh/ohmyzsh?tab=readme-ov-file#unattended-install
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
 if [ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel10k ]; then
