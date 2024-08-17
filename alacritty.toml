@@ -1,0 +1,15 @@
+[shell]
+program = "ubuntu"
+
+# buggy
+#program = "C:/msys64/msys2_shell.cmd"
+#args = ["-defterm", "-here", "-no-start", "-mingw64", "-shell", "zsh"]
+
+[font]
+normal.family = "JetBrainsMono Nerd Font"
+bold.family = "JetBrainsMono Nerd Font"
+italic.family = "JetBrainsMono Nerd Font"
+bold_italic.family = "JetBrainsMono Nerd Font"
+
+[cursor]
+style.shape = "Beam"
