@@ -1,31 +1,4 @@
 # Instructions
-### Download windows terminal theme
-https://windowsterminalthemes.dev/?theme=DraculaPlus
-or copy 
-```
-{
-  "name": "DraculaPlus",
-  "black": "#21222C",
-  "red": "#FF5555",
-  "green": "#50FA7B",
-  "yellow": "#ffcb6b",
-  "blue": "#82aaff",
-  "purple": "#c792ea",
-  "cyan": "#8BE9FD",
-  "white": "#F8F8F2",
-  "brightBlack": "#545454",
-  "brightRed": "#FF6E6E",
-  "brightGreen": "#69FF94",
-  "brightYellow": "#ffcb6b",
-  "brightBlue": "#D6ACFF",
-  "brightPurple": "#FF92DF",
-  "brightCyan": "#A4FFFF",
-  "brightWhite": "#F8F8F2",
-  "background": "#212121",
-  "foreground": "#F8F8F2"
-}
-```
-
 ### Setup conda in MSYS2
 - find conda.exe by running `where conda` in cmd
 - navigate to the folder
@@ -53,26 +26,25 @@ or copy
 
 ### Make symlinks
 
-see https://www.msys2.org/docs/symlinks/
+see https://www.msys2.org/docs/symlinks/ https://superuser.com/questions/167076/how-can-i-delete-a-symbolic-link-in-windows
 - enable developer mode in windows settings
 - in cmd: 
 
-`mklink C:\msys64\home\KirillA\.zshrc .\.zshrc`
+`mklink C:\msys64\home\%USERNAME%\.zshrc %cd%\.zshrc`
 
-`mklink /d %LOCALAPPDATA%\nvim .\nvim`
+`mklink /d %LOCALAPPDATA%\nvim %cd%\nvim`
 
-`mkdir %APPDATA%\alacritty && mklink %APPDATA%\alacritty\alacritty.toml .\alacritty.toml`
+`mkdir %APPDATA%\alacritty && mklink %APPDATA%\alacritty\alacritty.toml %cd%\alacritty.toml`
 
 
 # To do and bugs
-- add windows terminal config
 - add tmux config and installation to script
 - add creating symlinks automatically to script
 - add nvim gui config
 - tmux doesn't work with msys2 https://github.com/microsoft/terminal/issues/5132
 - conda completion sees only base evironment in MSYS (and ubuntu?), but works on WSL
 - neovim doesn't work in MSYS if config is in path with cyrillic symbols 
-- cygpath works weird after conda init
+- conda init adds binaries to path that conflict with mingw, this breaks git, cygpath,... 
 - cursor flickers in nvim qt (see https://neovim.io/doc/user/faq.html)
 - cursor changes in terminal after nvim
 
