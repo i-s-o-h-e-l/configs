@@ -1,4 +1,9 @@
 # Instructions
+
+### Setup keyboard layout
+- Create a shortcut to .ahk file 
+- Copy the shortcut to %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
+
 ### Setup conda in MSYS2
 - find conda.exe by running `where conda` in cmd
 - navigate to the folder
@@ -36,6 +41,15 @@ see https://www.msys2.org/docs/symlinks/ https://superuser.com/questions/167076/
 
 `mkdir %APPDATA%\alacritty && mklink %APPDATA%\alacritty\alacritty.toml %cd%\alacritty.toml`
 
+- in bash
+
+`ln -s $(pwd)/alacritty.toml ~/.config/alacritty/alacritty.toml`
+
+`ln -s $(pwd)/nvim ~/nvim`
+
+`ln -s $(pwd)/.tmux.conf ~/.tmux.conf`
+
+`ln -s $(pwd)/.zshrc ~/.zshrc`
 
 # To do and bugs
 - add tmux config and installation to script
