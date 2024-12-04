@@ -7,7 +7,7 @@
 #### Kanata
 ##### On Windows
 - Install driver from https://github.com/oblitum/Interception and copy Interception\library\x64\interception.dll into configs\keyboard\kanata
-- Download  kanata_gui_wintercept.exe from https://github.com/jtroo/kanata/releases/latest/download/kanata.exe and put into configs\keyboard\kanata
+- Download  kanata_gui_wintercept.exe from https://github.com/jtroo/kanata/releases/latest/download/kanata_gui_wintercept.exe and put into configs\keyboard\kanata
 - (Optionally) Add mouse id to kanata.kbd
 - Copy the shortcut to kanata_gui_wintercept.exe into %APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup
 
